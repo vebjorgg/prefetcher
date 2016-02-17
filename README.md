@@ -1,2 +1,2 @@
 # prefetcher
-Cahe prefetcher for TDT4260
+Cache prefetcher for TDT4260
