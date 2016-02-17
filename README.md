@@ -1,28 +1,28 @@
 #Prefetcher
 Cache prefetcher for TDT4260
 
-> The prefetcher must implement the three functions *prefetch_init*,
-> *prefetch_access* and *prefetch_complete*. The implementation may be empty.
+> The prefetcher must implement the three functions **prefetch_init**,
+> **prefetch_access** and **prefetch_complete**. The implementation may be empty.
 
-> The function *prefetch_init(void)* is called at the start of the simulation
+> The function **prefetch_init(void)** is called at the start of the simulation
 > to allow the prefetcher to initialize any data structures it will need.
 > When the L2 cache is accessed by the CPU (through the L1 cache), the function
-> *void prefetch_access(AccessStat stat)* is called with an argument
+> **void prefetch_access(AccessStat stat)** is called with an argument
 > (AccessStat stat) that gives various information about the access.
 
 > When the prefetcher decides to issue a prefetch request, it should call
-> issue *prefetch(Addr addr)*, which queues up a prefetch request for the
+> issue **prefetch(Addr addr)**, which queues up a prefetch request for the
 > block containing addr.
 
 > When a cache block that was requested by issue prefetch arrives from
 > memory, prefetch complete is called with the address of the completed
 > request as parameter.
 
-> Prefetches issued by *issue_prefetch(Addr addr)* go into a prefetch request
+> Prefetches issued by **issue_prefetch(Addr addr)** go into a prefetch request
 > queue. The cache will issue requests from the queue when it is not fetching
 > data for the CPU. This queue has a fixed size (available as MAX QUEUE SIZE),
 > and when it gets full, the oldest entry is evicted. If you want to check the
-> current size of this queue, use the function *current_queue_size(void).
+> current size of this queue, use the function **current_queue_size(void)**.
 
 
 #### Interface #defines
